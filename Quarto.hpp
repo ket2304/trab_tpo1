@@ -10,7 +10,8 @@ class Quarto: public Hotel{
         string capacidade;
         float dinheiro;
         string ramal;
-        static const int NUMERO_MAXIMO = 999;   
+        static const int NUMERO_MAXIMO = 999; 
+        static const int NUMERO_MÍNIMO = 1;  
         
     public:
         void setRamal(string);
