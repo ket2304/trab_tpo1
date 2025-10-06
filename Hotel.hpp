@@ -30,6 +30,7 @@ class Hotel{
         void setGerente(Gerente* g);
         void validar_Endereco(string);
         void validar_codigo(string);
+        Gerente* getGerente();
         
 };
 
@@ -48,5 +49,11 @@ inline string Hotel::getTelefone(){
 inline string Hotel::getCodigo(){
     return codigo;
 };
+
+inline Gerente* Hotel::getGerente() { 
+    return g; 
+
+};
+
 
 #endif //HOTEL_HPP_INCLUDED

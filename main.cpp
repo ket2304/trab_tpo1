@@ -2,13 +2,15 @@
 #include "Pessoa.hpp"
 #include "Gerente.hpp"
 #include "Hotel.hpp"
+#include "Quarto.hpp"
 using namespace std;
 
 
 int main() {
 
-    Hotel* h = new Hotel();
-    h->validar_codigo("abcd1234567");
+    Quarto* q = new Quarto();
+    
+    
     
 
 
