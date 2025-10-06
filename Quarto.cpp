@@ -8,14 +8,19 @@ void Quarto::setCapacidade(string capacidade){
 }
 
 void Quarto::setNumero(string numero){
+    validar_numero(numero);
     this->numero = numero;
 }
 
-void Quarto::setDinheiro(string dinheiro){
+void Quarto::setDinheiro(float dinheiro){
     this->dinheiro = dinheiro;
 }
 
 void Quarto::setRamal(string ramal){
     getGerente()->validarRamal(ramal);
     this->ramal = ramal;
+}
+
+void Quarto::validar_numero(string numero){
+    
 }

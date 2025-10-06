@@ -10,19 +10,23 @@ class Quarto: public Hotel{
         string capacidade;
         float dinheiro;
         string ramal;
+        static const int NUMERO_MAXIMO = 999;   
         
     public:
+        void setRamal(string);
         void setNumero(string);
         void setCapacidade(string);
-        void setDinheiro(string);
+        void setDinheiro(float);
         string getNumero();
         string getCapacidade();
         float getDinheiro();
-        
+        string getRamal();
+        void validar_numero(string);
+    
 };
 
 inline string Quarto::getNumero(){
-    return dinheiro;
+    return numero;
 }
 
 inline string Quarto::getCapacidade(){
@@ -33,7 +37,7 @@ inline float Quarto::getDinheiro(){
     return dinheiro;
 }
 
-inline string Gerente::getRamal(){
+inline string Quarto::getRamal(){
     return ramal;
 }
 

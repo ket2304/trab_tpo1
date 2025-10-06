@@ -11,7 +11,9 @@ int main() {
     Quarto* q = new Quarto();
     
     
+    q->setRamal("51");
     
+    cout<<q->getRamal();
 
 
     return 0;
