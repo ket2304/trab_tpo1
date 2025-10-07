@@ -22,9 +22,15 @@ void Quarto::setRamal(string ramal){
 }
 
 void Quarto::validar_numero(string numero){
-    int num = stoi(numero);
+    int num;
+    string num1 = numero;
+    const char* cstr = num1.c_str();
+    num = atoi(cstr);
+    
 
-    if(num > NUMERO_MAXIMO || num < NUMERO_MINIMO || numero.empty() || !isdigit(numero)){
+    if(numero.empty() || num > NUMERO_MAXIMO || num < NUMERO_MINIMO ||  !isdigit(numero[0]) || !isdigit(numero[1]) || !isdigit(numero[2])){
        throw invalid_argument("Argumento inválido");
     }
+    
+    if (numero.size() > 3){throw invalid_argument("Argumento inválido");}
 }

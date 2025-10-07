@@ -9,11 +9,10 @@ using namespace std;
 int main() {
 
     Quarto* q = new Quarto();
-    
-    
-    q->setRamal("51");
-    
-    cout<<q->getRamal();
+
+    q->setNumero("0005");
+
+    cout<<q->getNumero();
 
 
     return 0;
