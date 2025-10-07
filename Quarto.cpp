@@ -1,7 +1,7 @@
 #include <string>
 #include "Quarto.hpp"
 #include <stdexcept>
-
+#include <cctype>
 
 void Quarto::setCapacidade(string capacidade){
     this->capacidade = capacidade;
@@ -24,7 +24,7 @@ void Quarto::setRamal(string ramal){
 void Quarto::validar_numero(string numero){
     int num = stoi(numero);
 
-    if(num > NUMERO_MAXIMO || num < NUMERO_MINIMO || numero.empty() || !is_enum(numero)){
+    if(num > NUMERO_MAXIMO || num < NUMERO_MINIMO || numero.empty() || !isdigit(numero)){
        throw invalid_argument("Argumento inválido");
     }
 }
