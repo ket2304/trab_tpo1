@@ -22,5 +22,6 @@ void Quarto::setRamal(string ramal){
 }
 
 void Quarto::validar_numero(string numero){
+    int num = stoi(numero);
     
 }
