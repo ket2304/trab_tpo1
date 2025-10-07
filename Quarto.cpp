@@ -23,5 +23,8 @@ void Quarto::setRamal(string ramal){
 
 void Quarto::validar_numero(string numero){
     int num = stoi(numero);
-    
+
+    if(num > NUMERO_MAXIMO || num < NUMERO_MINIMO){
+       throw invalid_argument("Argumento inválido");
+    }
 }
