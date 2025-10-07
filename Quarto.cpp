@@ -1,6 +1,6 @@
 #include <string>
 #include "Quarto.hpp"
-
+#include <stdexcept>
 
 
 void Quarto::setCapacidade(string capacidade){
