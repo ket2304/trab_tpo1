@@ -42,7 +42,7 @@ void Quarto::validar_capacidade(string c){
 }
 
 void Quarto::validar_dinheiro(int d){
-    if (d < 0.01 || d > 1000000){
+    if (d < 0 || d > 1000000){
         throw invalid_argument("Argumento inválido");
     }
 }

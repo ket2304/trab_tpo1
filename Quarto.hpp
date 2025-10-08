@@ -23,7 +23,7 @@ class Quarto: public Hotel{
         string getCapacidade();
         int getDinheiro();
         string getRamal();
-        
+
         void validar_numero(string);
         void validar_capacidade(string);
         void validar_dinheiro (int);

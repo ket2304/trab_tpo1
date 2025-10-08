@@ -10,8 +10,7 @@ int main() {
 
     Quarto* q = new Quarto();
 
-    q->setDinheiro(1.50);
-
+    q->setDinheiro();
     cout<<q->getDinheiro();
 
 
