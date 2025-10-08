@@ -2,9 +2,6 @@
 #ifndef PESSOA_HPP_INCLUDED
 #define PESSOA_HPP_INCLUDED
 
-
-
-
 using namespace std;
 
 class Pessoa{

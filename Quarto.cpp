@@ -4,6 +4,7 @@
 #include <cctype>
 
 void Quarto::setCapacidade(string capacidade){
+    validar_capacidade(capacidade);
     this->capacidade = capacidade;
 }
 
@@ -33,4 +34,8 @@ void Quarto::validar_numero(string numero){
     }
     
     if (numero.size() > 3){throw invalid_argument("Argumento inválido");}
+}
+
+void Quarto::validar_capacidade(string c){
+    if(c.empty() || c[0] != '1' || c[0] != '2' || c[0] != '3' || c[0] != '4'){throw invalid_argument("Argumento inválido");}
 }
