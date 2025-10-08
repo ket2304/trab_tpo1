@@ -10,7 +10,7 @@ int main() {
 
     Quarto* q = new Quarto();
 
-    q->setCapacidade("0005");
+    q->setCapacidade("2.5");
 
     cout<<q->getCapacidade();
 
