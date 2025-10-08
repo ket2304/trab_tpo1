@@ -13,7 +13,8 @@ void Quarto::setNumero(string numero){
     this->numero = numero;
 }
 
-void Quarto::setDinheiro(float dinheiro){
+void Quarto::setDinheiro(int dinheiro){
+    validar_dinheiro(dinheiro);
     this->dinheiro = dinheiro;
 }
 
@@ -38,4 +39,10 @@ void Quarto::validar_numero(string numero){
 
 void Quarto::validar_capacidade(string c){
     if(c.empty() || (c != "1" && c != "2" && c != "3" && c != "4")){throw invalid_argument("Argumento inválido");}
+}
+
+void Quarto::validar_dinheiro(int d){
+    if (d < 0.01 || d > 1000000){
+        throw invalid_argument("Argumento inválido");
+    }
 }

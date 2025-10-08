@@ -10,9 +10,9 @@ int main() {
 
     Quarto* q = new Quarto();
 
-    q->setCapacidade("2.5");
+    q->setDinheiro(150);
 
-    cout<<q->getCapacidade();
+    cout<<q->getDinheiro();
 
 
     return 0;
