@@ -44,9 +44,7 @@ void Hotel::setCodigo(string codigo){
     this->codigo = codigo;
 };
 
-void Hotel::setGerente(Gerente* g){
-    this->g = g;
-}
+
 
 void Hotel::validar_Endereco(string endereco){
     regex padrao ("^(?:[A-Z0-9 ,.]+|(?=.*[a-z])(?=.*[A-Z])[A-Za-z0-9 ,.]+)$");
