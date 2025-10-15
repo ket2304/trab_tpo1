@@ -19,7 +19,7 @@ void Quarto::setDinheiro(int dinheiro){
 }
 
 void Quarto::setRamal(string ramal){
-    
+    validar_ramal(ramal);
     this->ramal = ramal;
 }
 
@@ -47,7 +47,7 @@ void Quarto::validar_dinheiro(int d){
     }
 }
 
-void Quarto::validarRamal(string ramal){
+void Quarto::validar_ramal(string ramal){
     int num;
     string ram = ramal;
     const char* cstr = ram.c_str();

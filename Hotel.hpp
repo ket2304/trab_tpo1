@@ -31,7 +31,7 @@ class Hotel{
         void setTelefone(string);
         void validar_telefone(string);
         void setCodigo(string);
-        void setGerente(Gerente* g);
+       
         void validar_Endereco(string);
         void validar_codigo(string);
         void validar_nome(string);
