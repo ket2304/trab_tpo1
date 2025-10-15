@@ -8,7 +8,7 @@
 
 
 void Hotel::setNome(string nome){
-    g->validarNome(nome);
+    validar_nome(nome);
     this->nome = nome;
 };
 
@@ -76,5 +76,30 @@ void Hotel::validar_codigo(string codigo){
     if(codigo.size() != TAMANHO_CODIGO || !regex_match(codigo, padrao_codigo)){
         throw invalid_argument("Código inválido");
     }
+
+}
+
+void Hotel::validar_nome(string nome){
+    
+    stringstream sstream;
+    sstream<<nome[0];
+    string letra = sstream.str();
+    regex padrao("^[A-Za-z ]+$");
+    regex maisculas("^[A-Z]+$");
+    int tam_nome = nome.size();
+
+    if (tam_nome < TAM_MIN || tam_nome > LIMITE_NOME || !regex_match(nome, padrao) || !regex_match(letra, maisculas) || nome.back() == ' '){
+        throw invalid_argument("argumento inválido");
+    }
+
+    for(int i = 0; i < nome.size() - 1; i++){
+        if (nome[i] == ' '){
+            stringstream sst; 
+            sst<<nome[i+1];
+            string let = sst.str();
+            if (!regex_match(let, maisculas)){throw invalid_argument("argumento inválido");}
+        }
+    }
+
 
 }
