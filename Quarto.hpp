@@ -13,7 +13,7 @@ class Quarto: public Hotel{
         static const int NUMERO_MAXIMO = 999; 
         static const int NUMERO_MINIMO = 1;  
         static const int LIMITE_RAMAL = 2;
-        
+
     public:
         void setRamal(string);
         void setNumero(string);
