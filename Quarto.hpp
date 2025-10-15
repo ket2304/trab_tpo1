@@ -27,6 +27,7 @@ class Quarto: public Hotel{
         void validar_numero(string);
         void validar_capacidade(string);
         void validar_dinheiro (int);
+        void validar_ramal(string);
     
 };
 

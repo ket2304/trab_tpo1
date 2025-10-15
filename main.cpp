@@ -10,9 +10,7 @@ int main() {
 
     Quarto* q = new Quarto();
 
-    q->setDinheiro();
-    cout<<q->getDinheiro();
-
+    q->validar_ramal("51");
 
     return 0;
 

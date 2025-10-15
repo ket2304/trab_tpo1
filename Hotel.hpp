@@ -15,7 +15,7 @@ class Hotel{
         static const int LIMITE_ENDERECO = 30;
         static const int MINIMO_ENDERECO = 5;
         static const int TAMANHO_CODIGO = 10;
-       Gerente* g;
+       
         
     public:
         string getNome();
@@ -30,7 +30,7 @@ class Hotel{
         void setGerente(Gerente* g);
         void validar_Endereco(string);
         void validar_codigo(string);
-        Gerente* getGerente();
+        
         
 };
 
@@ -50,10 +50,7 @@ inline string Hotel::getCodigo(){
     return codigo;
 };
 
-inline Gerente* Hotel::getGerente() { 
-    return g; 
 
-};
 
 
 #endif //HOTEL_HPP_INCLUDED

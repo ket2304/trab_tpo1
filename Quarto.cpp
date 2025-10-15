@@ -19,7 +19,7 @@ void Quarto::setDinheiro(int dinheiro){
 }
 
 void Quarto::setRamal(string ramal){
-    getGerente()->validarRamal(ramal);
+    
     this->ramal = ramal;
 }
 
@@ -44,5 +44,15 @@ void Quarto::validar_capacidade(string c){
 void Quarto::validar_dinheiro(int d){
     if (d < 0 || d > 1000000){
         throw invalid_argument("Argumento inválido");
+    }
+}
+
+void Quarto::validarRamal(string ramal){
+    int num;
+    string ram = ramal;
+    const char* cstr = ram.c_str();
+    num = atoi(cstr);
+    if(ramal.empty() || ramal.size() > LIMITE_RAMAL || (!isdigit(ramal[0]) || !isdigit(ramal[1]))|| (num < 0 || num > 50)){
+        throw invalid_argument("argumento inválido");
     }
 }
