@@ -15,6 +15,10 @@ class Hotel{
         static const int LIMITE_ENDERECO = 30;
         static const int MINIMO_ENDERECO = 5;
         static const int TAMANHO_CODIGO = 10;
+        static const int TAM_MIN = 5;
+        static const int LIMITE_NOME = 20;
+        static const int LIMITE_PARTE_LOCAL = 64;
+        static const int LIMITE_DOMINIO = 255;
        
         
     public:
