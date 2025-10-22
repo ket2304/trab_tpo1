@@ -9,14 +9,16 @@ class Reserva{
         string partida;
         string codigo;
         int dinheiro;
-        
+
     public:
+        string getChegada();
+        string getPartida();
+        string getCodigo();
+        int getDinheiro();
 
-
-
-
+        void setChegada(string);
+        void setPartda(string);
 };
-
 
 
 
