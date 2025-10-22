@@ -3,14 +3,16 @@
 #include "Gerente.hpp"
 #include "Hotel.hpp"
 #include "Quarto.hpp"
+#include "Reserva.hpp"
 using namespace std;
 
 
 int main() {
 
-    Quarto* q = new Quarto();
+    Reserva r = new Reserva();
 
-    q->validar_ramal("51");
+    r.validar_data("05MAI2025");
+
 
     return 0;
 
