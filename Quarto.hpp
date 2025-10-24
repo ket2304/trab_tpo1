@@ -1,6 +1,9 @@
-#include <string>
 #ifndef QUARTO_HPP_INCLUDED
 #define QUARTO_HPP_INCLUDED
+#pragma once
+
+#include <string>
+
 class Hotel;
 
 class Quarto{

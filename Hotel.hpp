@@ -1,9 +1,10 @@
-#include <string>
 #ifndef HOTEL_HPP_INCLUDED
 #define HOTEL_HPP_INCLUDED
+#pragma once
 
+#include <string>
+#include <vector>
 
-using namespace std;
 class Gerente;
 class Quarto;
 

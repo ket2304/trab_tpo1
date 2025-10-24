@@ -8,26 +8,20 @@
 #include <vector>
 using namespace std;
 
-void testar(const string& data, Reserva& r) {
-    try {
-        r.validar_data(data);
-        cout << "✅ OK: " << data << endl;
-    } catch (const exception& e) {
-        cout << "❌ ERRO: " << data 
-             << " -> " << e.what() << endl;
-    }
-}
 
 int main() {
     
-    Reserva r;
-    vector<string> testes = {
-        "01-JAN-2000", "29-FEV-2020", "31-ABR-2024", "29-FEV-2021",
-        "32-JAN-2024", "00-MAR-2024", "10-AAA-2024", "10-MAR-3000",
-        "10/FEV/2024", "2024-FEV-10", "1-1-2024", "31-DEZ-2999"
-    };
+    Hotel* h = new Hotel();
+    h->setNome("Hotel Central");
+    h->setEndereco("Avenida Principal,123");
+    h->setTelefone("123456789");
+    h->setCodigo("H001");
 
-    for (const auto& t : testes) {
-        testar(t, r);
-    }
+    Quarto* q1 = new Quarto();
+    q1->setNumero("101");
+    q1->setCapacidade("2");
+    q1->setDinheiro(200);
+    q1->setRamal("10");
+
+    h->adicionarQuarto(q1); 
 }
