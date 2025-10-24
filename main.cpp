@@ -11,7 +11,7 @@ int main() {
 
     Reserva* r = new Reserva();
 
-    r->setChegada("2-JAN-2000");
+    r->setChegada("01-JAN-98");
 
     cout<<r->getChegada();
 
