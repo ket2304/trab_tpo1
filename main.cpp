@@ -10,12 +10,12 @@ using namespace std;
 
 int main() {
 
-    Hospede *h = new Hospede();
+    Reserva* r = new Reserva();
 
-    h->setCartao("4242 4242 4242 4242");
+    r->getChegada("30-FEV-2000");
 
-    cout<<h->getCartao();
-    delete h;
+    cout<<r->getChegada();
+    delete r;
 
     return 0;
 

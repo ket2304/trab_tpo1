@@ -52,12 +52,25 @@ void Reserva::validar_data(string data) {
     string dia = data.substr(0, pos1);
     string mes = data.substr(pos1 + 1, pos2 - pos1 - 1);
     string ano = data.substr(pos2 + 1);
+    int dia_int = stoi(dia);
+    int ano_int = stoi(ano);
 
-    
     if (dia.empty() || dia.size() > 2 || !all_of(dia.begin(), dia.end(), ::isdigit)) {
         throw invalid_argument("dia inválido!");
     }
-    int dia_int = stoi(dia);
+
+
+    if((ano_int % 4 == 0) && (ano_int % 100 != 0) && (ano_int % 400 == 0)){
+        if(mes == "FEV" && (int_dia < 1 || dia_int > 29)){
+            throw invalid_argument("data inválida!");
+
+        }
+    }else{
+        if(mes == "FEV" && (int_dia < 1 || int_dia > 28)){
+            throw invalid_argument("data inválida!");
+        }
+    }
+    
     if (dia_int < 1 || dia_int > 31) {
         throw invalid_argument("dia fora do intervalo (1-31)!");
     }
@@ -72,7 +85,7 @@ void Reserva::validar_data(string data) {
     if (ano.empty() || ano.size() != 4 || !all_of(ano.begin(), ano.end(), ::isdigit)) {
         throw invalid_argument("ano inválido!");
     }
-    int ano_int = stoi(ano);
+    
     if (ano_int < 2000 || ano_int > 2999) {
         throw invalid_argument("ano fora do intervalo (2000-2999)!");
     }
