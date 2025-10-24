@@ -1,10 +1,10 @@
 #include <string>
 #ifndef HOTEL_HPP_INCLUDED
 #define HOTEL_HPP_INCLUDED
-class Gerente;
+
 
 using namespace std;
-
+class Gerente;
 class Hotel{
     
     private:

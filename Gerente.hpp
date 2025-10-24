@@ -34,9 +34,6 @@ inline string Gerente::getSenha(){
 
 
 
-void Hotel::setGerente(Gerente* gerente){
-    this->gerente = gerente;
-}
 
 
 #endif //GERENTE_HPP_INCLUDED
