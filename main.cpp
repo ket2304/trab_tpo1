@@ -4,18 +4,18 @@
 #include "Hotel.hpp"
 #include "Quarto.hpp"
 #include "Reserva.hpp"
+#include "Hospede.hpp"
 using namespace std;
 
 
 int main() {
 
-    Reserva* r = new Reserva();
+    Hospede *h = new Hospede();
 
-    r->setChegada("01-AGO-2000");
+    h->setEndereco("Quadra 45 Conjunto H Casa 07");
+    cout<<h->getEndereco();
 
-    cout<<r->getChegada();
-
-
+    delete h;
     return 0;
 
 }
