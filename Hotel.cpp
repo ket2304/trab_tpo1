@@ -108,3 +108,9 @@ void Hotel::validar_nome(string nome){
 void Hotel::setGerente(Gerente* gerente){
     this->gerente = gerente;
 }
+
+void Hotel::adicionarQuarto(Quarto* quarto) {
+    if (quarto != nullptr) {
+        this->quartos.push_back(quarto);
+    }
+}

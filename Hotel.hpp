@@ -5,6 +5,8 @@
 
 using namespace std;
 class Gerente;
+class Quarto;
+
 class Hotel{
     
     private:
@@ -13,6 +15,7 @@ class Hotel{
         string telefone;
         string codigo;
         Gerente* gerente;
+        vector <Quarto*> quartos;
         static const int LIMITE_TELEFONE = 14;
         static const int LIMITE_ENDERECO = 30;
         static const int MINIMO_ENDERECO = 5;
@@ -35,7 +38,9 @@ class Hotel{
         void setTelefone(string);
         void setCodigo(string);
         void setGerente(Gerente* gerente);
-
+        void adicionarQuarto(Quarto* quarto);
+        
+        vector<Quarto*> getQuartos() const;
         void validar_telefone(string);
         void validar_Endereco(string);
         void validar_codigo(string);
@@ -63,5 +68,8 @@ inline Gerente* Hotel::getGerente() const{
     return gerente;
 }
 
+inline vector <Quarto*> Hotel::getQuartos() const{
+    return quartos;
+}
 
 #endif //HOTEL_HPP_INCLUDED

@@ -23,6 +23,11 @@ void Quarto::setRamal(string ramal){
     this->ramal = ramal;
 }
 
+void Quarto::setHotel(Hotel* hotel){
+    this->hotel = hotel;
+}
+
+
 void Quarto::validar_numero(string numero){
     int num;
     string num1 = numero;

@@ -1,16 +1,16 @@
 #include <string>
 #ifndef QUARTO_HPP_INCLUDED
 #define QUARTO_HPP_INCLUDED
-#include "Hotel.hpp"
+class Hotel;
 
-
-class Quarto: public Hotel{
+class Quarto{
     
     private:
         string numero;
         string capacidade;
         int dinheiro;
         string ramal;
+        Hotel* hotel;
         static const int NUMERO_MAXIMO = 999; 
         static const int NUMERO_MINIMO = 1;  
         static const int LIMITE_RAMAL = 2;
@@ -20,13 +20,13 @@ class Quarto: public Hotel{
         void setNumero(string);
         void setCapacidade(string);
         void setDinheiro(int);
-        
+        void setHotel(Hotel* hotel);
 
         string getNumero();
         string getCapacidade();
         int getDinheiro();
         string getRamal();
-
+        Hotel* getHotel() const;
 
         void validar_numero(string);
         void validar_capacidade(string);
@@ -51,6 +51,8 @@ inline string Quarto::getRamal(){
     return ramal;
 }
 
-
+inline Hotel* Quarto::getHotel() const{
+    return hotel;
+}
 
 #endif //QUARTO_HPP_INCLUDED
