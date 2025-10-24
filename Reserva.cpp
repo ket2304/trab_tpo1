@@ -33,16 +33,9 @@ void Reserva::setDinheiro(int dinheiro){
     this->dinheiro = dinheiro;
 }
 
-#include <string>
-#include <algorithm>
-#include <stdexcept>
-#include <vector>
-
-using namespace std;
 
 
-
-void validar_data(string data) {
+void Reserva::validar_data(string data) {
     
     if (data.size() < 8 || data.size() > 11) {
         throw invalid_argument("data inválida!");
@@ -99,7 +92,6 @@ void Reserva::validar_codigo(string codigo){
         throw invalid_argument("Código inválido");
     }
 }
-
 
 void Reserva::validar_mes(string mes){
     vector <string> meses = {
