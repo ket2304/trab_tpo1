@@ -109,3 +109,7 @@ void Reserva::validar_mes(string mes){
 void Reserva::setQuarto(Quarto* quarto){
     this->quarto = quarto;
 }
+
+void Reserva::setHospede(Hospede* hospede){
+    this->hospede = hospede;
+}

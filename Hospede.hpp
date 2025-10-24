@@ -6,7 +6,7 @@
 class Hospede : public Pessoa{
     private:
         string endereco;
-        int cartao;
+        string cartao;
         static const int LIMITE_ENDERECO = 30;
         static const int MINIMO_ENDERECO = 5;
         static const int LIMITE_CARTAO = 16;

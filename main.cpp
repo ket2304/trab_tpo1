@@ -12,10 +12,11 @@ int main() {
 
     Hospede *h = new Hospede();
 
-    h->setEndereco("Quadra 45 Conjunto H Casa 07");
-    cout<<h->getEndereco();
+    h->setCartao("4242 4242 4242 4242");
 
+    cout<<h->getCartao();
     delete h;
+
     return 0;
 
 }

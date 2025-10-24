@@ -4,6 +4,7 @@
 using namespace std;
 
 class Quarto;
+class Hospede;
 
 class Reserva{
     private:
@@ -12,6 +13,7 @@ class Reserva{
         string codigo;
         int dinheiro;
         Quarto* quarto;
+        Hospede* hospede;
         static const int TAMANHO_CODIGO = 10;
 
     public:
@@ -20,13 +22,16 @@ class Reserva{
         string getCodigo();
         int getDinheiro();
         Quarto* getQuarto() const;
+        Hospede* getHospede() const;
+
 
         void setChegada(string);
         void setPartida(string);
         void setCodigo(string);
         void setDinheiro(int);
         void setQuarto(Quarto* quarto);
-        
+        void setHospede(Hospede* hospede);
+
         void validar_data(string);
         void validar_codigo(string);
         void validar_dinheiro(int);
@@ -51,8 +56,12 @@ inline int Reserva::getDinheiro(){
     return dinheiro;
 }
 
-inline Quarto* Reserva::getQuarto()const{
+inline Quarto* Reserva::getQuarto() const{
     return quarto;
+}
+
+inline Hospede* Reserva::getHospede() const{
+    return hospede;
 }
 
 #endif //RESERVA_HPP_INCLUDED
