@@ -33,10 +33,18 @@ void Reserva::setDinheiro(int dinheiro){
     this->dinheiro = dinheiro;
 }
 
-void Reserva::validar_data(string data){
+#include <string>
+#include <algorithm>
+#include <stdexcept>
+#include <vector>
+
+using namespace std;
+
+
+
+void validar_data(string data) {
     
-    
-    if (data.size() < 9 || data.size() > 11) {
+    if (data.size() < 8 || data.size() > 11) {
         throw invalid_argument("data inválida!");
     }
 
@@ -44,33 +52,39 @@ void Reserva::validar_data(string data){
     size_t pos1 = data.find('-');
     size_t pos2 = data.rfind('-');
 
-    
     if (pos1 == string::npos || pos2 == string::npos || pos1 == pos2) {
-    throw invalid_argument("formato de data inválido!");
+        throw invalid_argument("formato de data inválido!");
     }
-
-
 
     string dia = data.substr(0, pos1);
     string mes = data.substr(pos1 + 1, pos2 - pos1 - 1);
     string ano = data.substr(pos2 + 1);
 
-    int dia_int = stoi(dia);
-    int ano_int = stoi(ano);
-
-    if (!all_of(dia.begin(), dia.end(), ::isdigit) || 
-    !all_of(ano.begin(), ano.end(), ::isdigit)) {
-    throw invalid_argument("data inválida!");
-    }
     
+    if (dia.empty() || dia.size() > 2 || !all_of(dia.begin(), dia.end(), ::isdigit)) {
+        throw invalid_argument("dia inválido!");
+    }
+    int dia_int = stoi(dia);
+    if (dia_int < 1 || dia_int > 31) {
+        throw invalid_argument("dia fora do intervalo (1-31)!");
+    }
+
+    
+    if (mes.empty() || mes.size() != 3) {
+        throw invalid_argument("mes inválido!");
+    }
     validar_mes(mes);
-   
-    if(dia.empty() || (dia.size() != 1 && dia.size() != 2) || (dia_int < 1 || dia_int > 31)
-       || mes.empty() || mes.size() != 3
-       || ano.empty() || ano.size() != 4 || (ano_int < 2000 || ano_int > 2999)) {
-        throw invalid_argument("data inválida!");
+
+    
+    if (ano.empty() || ano.size() != 4 || !all_of(ano.begin(), ano.end(), ::isdigit)) {
+        throw invalid_argument("ano inválido!");
+    }
+    int ano_int = stoi(ano);
+    if (ano_int < 2000 || ano_int > 2999) {
+        throw invalid_argument("ano fora do intervalo (2000-2999)!");
     }
 }
+
 
 void Reserva::validar_dinheiro(int d){
     if (d < 0 || d > 1000000){
