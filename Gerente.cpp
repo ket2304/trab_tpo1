@@ -18,9 +18,7 @@ void Gerente::setSenha(std::string senha){
     this->senha = senha;
 }
 
-void Gerente::setHotel(Hotel* hotel){
-    this->hotel = hotel;
-}
+
 
 void Gerente::validarRamal(string ramal){
     int num;

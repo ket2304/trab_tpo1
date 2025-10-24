@@ -4,6 +4,7 @@
 #include <iterator>
 #include <regex>
 #include <string>
+#include "Gerente.hpp"
 
 
 
@@ -102,4 +103,8 @@ void Hotel::validar_nome(string nome){
     }
 
 
+}
+
+void Hotel::setGerente(Gerente* gerente){
+    this->gerente = gerente;
 }

@@ -8,31 +8,69 @@
 #include <algorithm> 
 #include <stdexcept>
 #include <cstdlib>
+#include "Quarto.hpp"
+
 
 using namespace std;
 
+void Reserva::setChegada(string chegada){
+    validar_data(chegada);
+    this->chegada = chegada;
+}
+
+void Reserva::setPartida(string partida){
+    validar_data(partida);
+    this->partida = partida;
+}
+
+void Reserva::setCodigo(string codigo){
+    validar_codigo(codigo);
+    this->codigo = codigo;
+}
+
+void Reserva::setDinheiro(int dinheiro){
+    validar_dinheiro(dinheiro);
+    this->dinheiro = dinheiro;
+}
 
 void Reserva::validar_data(string data){
     
-    string dia = data.substr(0, 2);
-    string mes = data.substr(2, 3);
-    string ano = data.substr(5);
-
-    int dia_int = atoi(dia.c_str());
-    int ano_int = atoi(ano.c_str());
-
-    validar_mes(mes);
-
-    if(dia.empty() || dia.size() < 1 || dia.size() < 2 || (dia_int < 1 || dia_int > 31) || mes.empty() || mes.size() != 3
-        || ano.empty() || ano.size() != 4 || (ano_int < 2000 || ano_int > 2999)){
+    
+    if (data.size() < 9 || data.size() > 11) {
         throw invalid_argument("data inválida!");
+    }
+
+    
+    size_t pos1 = data.find('-');
+    size_t pos2 = data.rfind('-');
+
+    
+    if (pos1 == string::npos || pos2 == string::npos || pos1 == pos2) {
+    throw invalid_argument("formato de data inválido!");
     }
 
 
 
+    string dia = data.substr(0, pos1);
+    string mes = data.substr(pos1 + 1, pos2 - pos1 - 1);
+    string ano = data.substr(pos2 + 1);
+
+    int dia_int = stoi(dia);
+    int ano_int = stoi(ano);
+
+    if (!all_of(dia.begin(), dia.end(), ::isdigit) || 
+    !all_of(ano.begin(), ano.end(), ::isdigit)) {
+    throw invalid_argument("data inválida!");
+    }
+    
+    validar_mes(mes);
+   
+    if(dia.empty() || (dia.size() != 1 && dia.size() != 2) || (dia_int < 1 || dia_int > 31)
+       || mes.empty() || mes.size() != 3
+       || ano.empty() || ano.size() != 4 || (ano_int < 2000 || ano_int > 2999)) {
+        throw invalid_argument("data inválida!");
+    }
 }
-
-
 
 void Reserva::validar_dinheiro(int d){
     if (d < 0 || d > 1000000){
@@ -62,3 +100,6 @@ void Reserva::validar_mes(string mes){
     }
 }
 
+void Reserva::setQuarto(Quarto* quarto){
+    this->quarto = quarto;
+}

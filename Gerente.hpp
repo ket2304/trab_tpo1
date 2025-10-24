@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Hotel;
+
 
 class Gerente : public Pessoa{
     private:
@@ -13,7 +13,7 @@ class Gerente : public Pessoa{
         static const int QUANTIDADE_SENHA = 5;
         string ramal;
         string senha;
-        Hotel *hotel;
+        
     public:
         string getRamal();
         string getSenha();
@@ -21,8 +21,6 @@ class Gerente : public Pessoa{
         void setSenha(string);
         void validarRamal(string);
         void validarSenha(string);
-        Hotel* getHotel() const;
-        void setHotel(Hotel* hotel);
         
     };
 
@@ -34,8 +32,10 @@ inline string Gerente::getSenha(){
     return senha;
 };
 
-inline Hotel* Gerente::getHotel()const{
-    return hotel;
+
+
+void Hotel::setGerente(Gerente* gerente){
+    this->gerente = gerente;
 }
 
 

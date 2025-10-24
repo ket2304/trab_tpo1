@@ -9,9 +9,11 @@ using namespace std;
 
 int main() {
 
-    Reserva r = new Reserva();
+    Reserva* r = new Reserva();
 
-    r.validar_data("05MAI2025");
+    r->setChegada("-2-JAN-2000");
+
+    cout<<r->getChegada();
 
 
     return 0;

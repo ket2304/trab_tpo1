@@ -5,6 +5,7 @@
 
 
 class Quarto: public Hotel{
+    
     private:
         string numero;
         string capacidade;
@@ -13,17 +14,19 @@ class Quarto: public Hotel{
         static const int NUMERO_MAXIMO = 999; 
         static const int NUMERO_MINIMO = 1;  
         static const int LIMITE_RAMAL = 2;
-
+        
     public:
         void setRamal(string);
         void setNumero(string);
         void setCapacidade(string);
         void setDinheiro(int);
+        
 
         string getNumero();
         string getCapacidade();
         int getDinheiro();
         string getRamal();
+
 
         void validar_numero(string);
         void validar_capacidade(string);
@@ -47,6 +50,7 @@ inline int Quarto::getDinheiro(){
 inline string Quarto::getRamal(){
     return ramal;
 }
+
 
 
 #endif //QUARTO_HPP_INCLUDED

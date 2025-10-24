@@ -56,3 +56,5 @@ void Quarto::validar_ramal(string ramal){
         throw invalid_argument("argumento inválido");
     }
 }
+
+

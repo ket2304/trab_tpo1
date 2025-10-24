@@ -1,16 +1,18 @@
 #include <string>
 #ifndef HOTEL_HPP_INCLUDED
 #define HOTEL_HPP_INCLUDED
-#include "Gerente.hpp"
+class Gerente;
 
 using namespace std;
 
 class Hotel{
+    
     private:
         string nome;
         string endereco;
         string telefone;
         string codigo;
+        Gerente* gerente;
         static const int LIMITE_TELEFONE = 14;
         static const int LIMITE_ENDERECO = 30;
         static const int MINIMO_ENDERECO = 5;
@@ -26,12 +28,15 @@ class Hotel{
         string getEndereco();
         string getTelefone();
         string getCodigo();
+        Gerente* getGerente()const;
+        
         void setNome(string);
         void setEndereco(string);
         void setTelefone(string);
-        void validar_telefone(string);
         void setCodigo(string);
-       
+        void setGerente(Gerente* gerente);
+
+        void validar_telefone(string);
         void validar_Endereco(string);
         void validar_codigo(string);
         void validar_nome(string);
@@ -54,7 +59,9 @@ inline string Hotel::getCodigo(){
     return codigo;
 };
 
-
+inline Gerente* Hotel::getGerente() const{
+    return gerente;
+}
 
 
 #endif //HOTEL_HPP_INCLUDED
