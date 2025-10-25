@@ -34,17 +34,24 @@ void Quarto::setHotel(Hotel* hotel){
 
 
 void Quarto::validar_numero(string numero){
+    
+    for (char c : numero) {
+        if (!isdigit(c)) {
+            throw invalid_argument("Número deve conter apenas dígitos.");
+        }
+    }
+
     int num;
     string num1 = numero;
     const char* cstr = num1.c_str();
     num = atoi(cstr);
-    
+
 
     if(numero.empty() || num > NUMERO_MAXIMO || num < NUMERO_MINIMO ||  !isdigit(numero[0]) || !isdigit(numero[1]) || !isdigit(numero[2])){
        throw invalid_argument("Argumento inválido");
     }
     
-    if (numero.size() > 3){throw invalid_argument("Argumento inválido");}
+    if (numero.size()!= 3){throw invalid_argument("Argumento inválido");}
 }
 
 void Quarto::validar_capacidade(string c){
