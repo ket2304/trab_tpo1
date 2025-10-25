@@ -64,6 +64,7 @@ void Hotel::setCodigo(string codigo){
 
 
 void Hotel::validar_Endereco(string endereco){
+    
     regex padrao ("^(?:[A-Z0-9 ,.]+|(?=.*[a-z])(?=.*[A-Z])[A-Za-z0-9 ,.]+)$");
     regex carac_valido ("^(?:[A-Z0-9 ]+|(?=.*[a-z])(?=.*[A-Z])[A-Za-z0-9 ]+)$");
     regex carac_let_digito("^[A-Za-z0-9]$");
