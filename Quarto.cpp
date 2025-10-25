@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/**
+ * @brief Descrição do método
+ * @param x Informações do parâmetro
+ * @return O que a função retorna
+ */
 
 
 void Quarto::setCapacidade(string capacidade){
@@ -40,14 +45,15 @@ void Quarto::validar_numero(string numero){
             throw invalid_argument("Número deve conter apenas dígitos.");
         }
     }
-
+    
     int num;
     string num1 = numero;
     const char* cstr = num1.c_str();
     num = atoi(cstr);
 
 
-    if(numero.empty() || num > NUMERO_MAXIMO || num < NUMERO_MINIMO ||  !isdigit(numero[0]) || !isdigit(numero[1]) || !isdigit(numero[2])){
+    if(numero.empty() || num > NUMERO_MAXIMO || num < NUMERO_MINIMO 
+){
        throw invalid_argument("Argumento inválido");
     }
     
