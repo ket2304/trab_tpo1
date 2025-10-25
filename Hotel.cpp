@@ -7,6 +7,7 @@
 #include <string>
 #include "Quarto.hpp"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -23,11 +24,23 @@ void Hotel::setEndereco(string endereco){
 
 void Hotel::validar_telefone(string telefone){
 
-    if(telefone.empty()){throw invalid_argument("Argumento inválido");}
+    
+    size_t pos = telefone.find("+");
+    int contagem = std::count(telefone.begin(), telefone.end(), '+');    
+
+    if(telefone.empty() || pos == std::string::npos){throw invalid_argument("Argumento inválido");}
+
+    if(pos != 0 || contagem > 1){
+        throw invalid_argument("Argumento inválido");
+    }
+
+    telefone.erase(0,1);
 
     if (telefone.size() > LIMITE_TELEFONE){
         throw invalid_argument("Argumento inválido");
     }
+    
+    
     for (char c : telefone){
             if (!isdigit(c)){
                 throw invalid_argument("Argumento inválido");
