@@ -41,7 +41,7 @@ void Gerente::validarSenha(string senha){
         throw invalid_argument("Senha inválida");
     }
 
-    for (size_t i = 0; i < senha.size() - 1; i++){
+    for (size_t i = 0; i < senha.size(); i++){
 
         if (isalpha(senha[i]) && isalpha(senha[i+1])){
             throw invalid_argument("Senha inválida");
