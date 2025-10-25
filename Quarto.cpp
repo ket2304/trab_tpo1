@@ -2,6 +2,11 @@
 #include "Quarto.hpp"
 #include <stdexcept>
 #include <cctype>
+#include <iostream>
+
+using namespace std;
+
+
 
 void Quarto::setCapacidade(string capacidade){
     validar_capacidade(capacidade);

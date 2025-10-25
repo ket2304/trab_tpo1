@@ -1,6 +1,9 @@
 #ifndef HOTEL_HPP_INCLUDED
 #define HOTEL_HPP_INCLUDED
-#pragma once
+
+#include <iostream>
+
+using namespace std;
 
 #include <string>
 #include <vector>

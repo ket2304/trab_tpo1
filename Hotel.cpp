@@ -5,7 +5,10 @@
 #include <iterator>
 #include <regex>
 #include <string>
+#include "Quarto.hpp"
+#include <iostream>
 
+using namespace std;
 
 
 void Hotel::setNome(string nome){

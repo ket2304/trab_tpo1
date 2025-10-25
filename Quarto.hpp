@@ -1,6 +1,8 @@
 #ifndef QUARTO_HPP_INCLUDED
 #define QUARTO_HPP_INCLUDED
-#pragma once
+#include <iostream>
+
+using namespace std;
 
 #include <string>
 
