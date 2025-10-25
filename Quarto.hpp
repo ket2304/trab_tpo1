@@ -11,6 +11,7 @@ class Hotel;
 class Quarto{
     
     private:
+        
         string numero;
         string capacidade;
         int dinheiro;
