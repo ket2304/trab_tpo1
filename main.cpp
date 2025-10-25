@@ -10,7 +10,14 @@ using namespace std;
 
 
 int main() {
-    
+    Hotel* h = new Hotel();
+
+    h->setTelefone("++551234567");
+
+
+    cout<<h->getTelefone();
+
+    delete h;
 
     return 0;
 }
