@@ -6,11 +6,7 @@
 
 using namespace std;
 
-/**
- * @brief Descrição do método
- * @param x Informações do parâmetro
- * @return O que a função retorna
- */
+
 
 
 void Quarto::setCapacidade(string capacidade){

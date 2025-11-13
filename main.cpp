@@ -58,8 +58,8 @@ int main() {
     executarTeste("0A1", "F6: Contém Letra (Meio)", false);
     executarTeste("10A", "F7: Contém Letra (Fim)", false);
 
-    
-
+    cout<<"programa encerrado!"<<endl;    
+    system("pause");
 
     return 0;
 }
